@@ -3,11 +3,27 @@ import himalaya from './himalaya.jpg';
 import sahyadri from './sahyadri.jpg';
 import arvallis from './aravalli-range.jpg';
 import { createRoot } from 'react-dom/client'
+
+
+const navbarStyle = {
+  backgroundColor: "#2c3e50",
+  padding: "10px",
+  marginBottom: "20px",
+  textAlign: "center",
+  padding:"20px"
+};
+function Navbar(){
+  return(
+    <div className="navbar" style={navbarStyle}>
+      <h1 style={{color:"white", textAlign:"center"}}>Mountain Ranges of India</h1>
+    </div>
+  )
+}
+
+
 function Card(props){
 const {image, heading , subheading} = props;
 return(
-  
- 
    <div className="card">
     <img src={image} alt="image" className="card-image"/>
     <div className="container">
@@ -15,15 +31,29 @@ return(
       <p>{subheading}</p>
     </div>
   </div>
-
   
 )
+}
+const footerStyle = {
+  backgroundColor:"#2c3e50", 
+  color:"white", 
+  textAlign:"center", 
+  padding:"10px", 
+  marginTop:"20px"
+};
 
+function Footer(){
+  return (
+    <div className="footer" style={footerStyle}>
+      <p>© 2024 Mountain Ranges of India. All rights reserved.</p>
+    </div>
+  )
 }
 
 
 createRoot(document.getElementById('root')).render(
   <>
+  <Navbar/>
   <div className="card-container">
     <Card 
 image={himalaya}
@@ -41,5 +71,7 @@ heading={"Aravalli Range"}
 subheading={"The Aravalli Range is one of the oldest mountain ranges in India, stretching across the states of Rajasthan, Haryana, and Gujarat. It extends approximately 692 kilometers from Delhi in the north to Gujarat in the southwest. The range is characterized by its rugged terrain, rocky outcrops, and sparse vegetation. The Aravalli Range plays a crucial role in influencing the climate of the region, acting as a barrier to the monsoon winds. It is also rich in mineral resources, including deposits of copper, lead, zinc, and marble. "}
 />
   </div>
+
+  <Footer/>
   </>
 )
