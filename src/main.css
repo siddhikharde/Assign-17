@@ -3,10 +3,19 @@
     margin: 0;
     padding: 0;
 }
+.card-container{
+width: 100%;
+height: auto;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+flex-direction: row;
+
+}
 .card{
    
     width: 30%;
-    margin: auto;
     text-align: center;
   margin: 20px;
     font-size: 20px;
@@ -20,7 +29,6 @@
 
 }
 .card:hover{
-   
     cursor: pointer;
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
@@ -54,4 +62,14 @@ body{
     cursor: pointer;
     filter: brightness(0.6);
     transition: all 0.3s ease-in-out;
+}
+@media (max-width:1024px) and (min-width:724px) {
+    .card{
+        width: 45%;
+    }
+}
+@media (max-width:723px) {
+    .card{
+        width: 80%;
+    }
 }
